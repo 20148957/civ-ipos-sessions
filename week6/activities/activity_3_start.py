@@ -19,11 +19,12 @@ class Location:
 
 class Graph:
     def __init__(self):
+        self.locations = {}
         # Dictionary to store location names as keys and lists of connected locations as values
-        pass
 
     def add_location(self, location):
         # Create an empty list for each location's connections
+        self.locations[location] = []
         # Each location is now a vertice in the graph object
         pass
 
@@ -31,6 +32,10 @@ class Graph:
     def add_connection(self, location1_name, location2_name):
         pass
         # Search the dicitonary keys for the two locations
+        if location1_name in self.locations:
+            if location2_name in self.locations:
+                self.locations[location1_name].append(location2_name)
+                self.locations[location2_name].append(location1_name)
 
             # Add the connection bidirectionally
             # If both keys are found connect them by adding each to the Locations list

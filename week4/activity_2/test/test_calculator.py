@@ -28,8 +28,17 @@ class TestaddFunction(unittest.TestCase):
 
     # TODO use case - whats left to test???
     # string
+    def test_string(self):
+        with self.assertRaises(TypeError):
+            add("2", 3)
     # boolean
+    def test_bool(self):
+        with self.assertRaises(TypeError):
+            add("2", True)
     # collections other objects
+    def test_collection(self):
+        with self.assertRaises(TypeError):
+            add("2", [0, 1])
     # null values
 
         # arrange
